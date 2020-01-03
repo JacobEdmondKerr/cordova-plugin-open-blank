@@ -41,6 +41,12 @@ import org.json.JSONException;
 @SuppressLint("SetJavaScriptEnabled")
 public class OpenBlank extends CordovaPlugin {
     @Override
+    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+        super.initialize(cordova, webView);
+        WebView webView = (WebView) UnfoldPlugin.this.webView.getEngine().getView();
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.addJavascriptInterface(new WebAppInterface(webView.getContext()), "android");
+    }
     public boolean onOverrideUrlLoading(String url) {
     	Log.d("OpenBlank", "onOverrideUrlLoading called with URL " + url);
    		if(url.indexOf("google") > -1 || url.indexOf(".com") > -1 || url.indexOf(".net") > -1 || url.indexOf(".org") > -1) {
