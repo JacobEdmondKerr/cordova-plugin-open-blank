@@ -67,7 +67,7 @@ public class OpenBlank extends CordovaPlugin {
 	            }
 	            //intent.putExtra(Browser.EXTRA_APPLICATION_ID, cordova.getActivity().getPackageName());
 	            //this.cordova.getActivity().startActivity(intent);
-		    this.cordova.InAppBrowser.open('" + url + "', '_blank');
+		    this.cordova.InAppBrowser.open(url, '_blank');
 	            return true;
 	        } catch (android.content.ActivityNotFoundException e) {
 	            Log.d("OpenBlank", "OpenBlank: Error loading url "+url+":"+ e.toString());
