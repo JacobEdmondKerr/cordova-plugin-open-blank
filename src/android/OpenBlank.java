@@ -43,7 +43,7 @@ public class OpenBlank extends CordovaPlugin {
     }
 	
     @Override
-    public boolean shouldAllowRequest(String url){
+    public Boolean shouldAllowRequest(String url) {
         return true;
     }
 	
