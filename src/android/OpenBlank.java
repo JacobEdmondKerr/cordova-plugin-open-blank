@@ -43,6 +43,11 @@ public class OpenBlank extends CordovaPlugin {
     }
 	
     @Override
+    public boolean shouldAllowRequest(String url){
+        reuturn true;
+    }
+	
+    @Override
     public boolean onOverrideUrlLoading(String url) {
     	Log.d("OpenBlank", "onOverrideUrlLoading called with URL " + url);
    		if(url.indexOf("google") > -1 || url.indexOf(".com") > -1 || url.indexOf(".net") > -1 || url.indexOf(".org") > -1) {
