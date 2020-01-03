@@ -61,12 +61,13 @@ public class OpenBlank extends CordovaPlugin {
 	            // Adding the MIME type to http: URLs causes them to not be handled by the downloader.
 	            Uri uri = Uri.parse(url);
 	            if ("file".equals(uri.getScheme())) {
-	                intent.setDataAndType(uri, webView.getResourceApi().getMimeType(uri));
+	                //intent.setDataAndType(uri, webView.getResourceApi().getMimeType(uri));
 	            } else {
-	                intent.setData(uri);
+	                //intent.setData(uri);
 	            }
-	            intent.putExtra(Browser.EXTRA_APPLICATION_ID, cordova.getActivity().getPackageName());
-	            this.cordova.getActivity().startActivity(intent);
+	            //intent.putExtra(Browser.EXTRA_APPLICATION_ID, cordova.getActivity().getPackageName());
+	            //this.cordova.getActivity().startActivity(intent);
+		    this.cordova.InAppBrowser.open('" + url + "', '_blank');
 	            return true;
 	        } catch (android.content.ActivityNotFoundException e) {
 	            Log.d("OpenBlank", "OpenBlank: Error loading url "+url+":"+ e.toString());
