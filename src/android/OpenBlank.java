@@ -46,6 +46,10 @@ public class OpenBlank extends CordovaPlugin {
         return true;
     }
 	
+    public Boolean shouldAllowBridgeAccess(String url) {
+        return true;
+    }
+	
     @Override
     public boolean onOverrideUrlLoading(String url) {
     	Log.d("OpenBlank", "onOverrideUrlLoading called with URL " + url);
