@@ -43,7 +43,6 @@ public class OpenBlank extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        webView.addJavascriptInterface(new WebAppInterface(webView.getContext()), "android");
     }
     public boolean onOverrideUrlLoading(String url) {
     	Log.d("OpenBlank", "onOverrideUrlLoading called with URL " + url);
