@@ -40,6 +40,7 @@ public class OpenBlank extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
+	final View rootView = cordova.getActivity().getWindow().getDecorView().findViewById(android.R.id.content).getRootView();
     }
 	
     @Override
@@ -50,7 +51,7 @@ public class OpenBlank extends CordovaPlugin {
 			    webView.getView().post(new Runnable() {
 				@Override
 				public void run() {
-					webView.loadUrl("javascript:cordova.InAppBrowser.open('"+url+"');");
+					rootView.loadUrl("javascript:cordova.InAppBrowser.open('"+url+"');");
 				}
 			    });
 			    return true;
