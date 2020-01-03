@@ -20,7 +20,7 @@ public class OpenBlank extends CordovaPlugin {
             Uri uri = Uri.parse(url);
             if ("http".equals(uri.getScheme()) || "https".equals(uri.getScheme())) {
                 Log.d("OpenBlank", "New fork working!");
-                sendJavascript("cordova.InAppBrowser.open('" + url + "', '_blank');");
+                webView.sendJavascript("cordova.InAppBrowser.open('" + url + "', '_blank');");
             } else {
                 return false;
             }
