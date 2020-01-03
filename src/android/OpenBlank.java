@@ -42,7 +42,6 @@ public class OpenBlank extends CordovaPlugin {
         super.initialize(cordova, webView);
     }
 	
-    @Override
     public Boolean shouldAllowRequest(String url) {
         return true;
     }
